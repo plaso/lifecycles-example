@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import { Component } from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Counter from './components/Counter'
+import Post from './components/Post';
+import Posts from './components/Posts';
+import UsersList from './components/UsersList';
+
+class App extends Component {
+  state = {
+    showCounter: false
+  }
+
+  toggleCounter = () => {
+    this.setState(prevState => ({ showCounter: !prevState.showCounter }))
+  }
+
+  render() {
+    return (
+      <div className="App">
+        {/* <button onClick={this.toggleCounter}>Toggle counter</button>
+        {this.state.showCounter && (
+          <Counter />
+        )}
+        <UsersList /> */}
+
+        {/* <Posts /> */}
+
+        <Post />
+      </div>
+    );
+  }
 }
 
 export default App;
